@@ -94,7 +94,6 @@ def per_site(args: T.List[str]):
     if "pixiv.net" in url:
         gldl_args = GLDLCLIArgs(
             o=[
-                "cookies-update=true",
                 'filename="{category} {date:%Y-%m-%d} {id} {title} {page_count}p '
                 '@{user[name]} p{num}.{extension}"',
                 'directory=["{user[name]} {category} {user[id]}"]',
@@ -125,11 +124,6 @@ def per_site(args: T.List[str]):
         gldl_args = [
             *GLDLCLIArgs(
                 o=[
-                    "cookies-update=true",
-                    "videos=true",
-                    'filename="{category} {date!S:.10} {id} {title} {page_count}p '
-                    '@{creatorId} p{num}.{extension}"',
-                    'directory=["{user[name]} {category} {user[userId]} {creatorId}"]',
                 ]
             ),
             *args,
@@ -139,7 +133,6 @@ def per_site(args: T.List[str]):
         gldl_args = [
             *GLDLCLIArgs(
                 o=[
-                    "videos=true",
                     "retweets=false",
                     "content=true",
                     'filename="{category} {date!S:.10} {tweet_id} {content!S:.48} {count}p '
@@ -395,7 +388,6 @@ def per_site(args: T.List[str]):
         gldl_args = [
             *GLDLCLIArgs(
                 o=[
-                    "videos=true",
                     "tags=true",
                     'directory=["{album[title]} {category} {subcategory} {album[id]} {album[description]:.100}"]',
                     'filename="{category} {subcategory} {album[id]} {album[title]} {id} {title}.{extension}"',
@@ -408,8 +400,6 @@ def per_site(args: T.List[str]):
         gldl_args = [
             *GLDLCLIArgs(
                 o=[
-                    "cookies-update=true",
-                    "videos=true",
                     "tags=true",
                     'directory=["{user} {category}"]',
                     'filename="{category} {date!S:.10} {index} '
@@ -433,8 +423,6 @@ def per_site(args: T.List[str]):
         gldl_args = [
             *GLDLCLIArgs(
                 o=[
-                    "cookies-update=true",
-                    "videos=true",
                     "tags=true",
                     "metadata=true",
                     "directory=[\"{username|author['global_name']} {category} {service|subcategory} {user|server}{channel:? //}\"]",
