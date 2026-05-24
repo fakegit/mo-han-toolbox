@@ -489,7 +489,7 @@ def add_sort_range_args(common_args, pq_value, url, site_settings):
 
 
 def search_tags_in_filter(search_tags: str):
-    TAGS_IN_FILTER = ["uncensored", "cover", "loli"]
+    TAGS_IN_FILTER = ["uncensored", "cover", "loli", 'vagina']
     TAGS_IN_FILTER.extend([f"-{i}" for i in TAGS_IN_FILTER])
 
     if "TAGS_IN_FILTER" in os.environ:
